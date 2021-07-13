@@ -1,0 +1,50 @@
+[
+   {
+      "id": 1,
+      "title": "The Amazing Spiderman 2",
+      "genre": null,
+      "category": 1,
+      "language": "English/US",
+      "time": "90",
+      "image_cover": "afnjdfjfnj.jpg",
+      "country": 1,
+      "createdAt": "2021-07-12T06:38:59.545Z",
+      "updatedAt": "2021-07-12T06:38:59.545Z"
+   },
+   {
+      "id": 2,
+      "title": "Start Up",
+      "genre": null,
+      "category": 2,
+      "language": "Korean",
+      "time": "90",
+      "image_cover": "afnjdfjfnj.jpg",
+      "country": 5,
+      "createdAt": "2021-07-12T07:03:24.789Z",
+      "updatedAt": "2021-07-12T07:03:24.789Z"
+   },
+   {
+      "id": 3,
+      "title": "Running Man",
+      "genre": null,
+      "category": 2,
+      "language": "Korean",
+      "time": "90",
+      "image_cover": "afnjdfjfnj.jpg",
+      "country": 5,
+      "createdAt": "2021-07-12T07:04:49.955Z",
+      "updatedAt": "2021-07-12T07:04:49.955Z"
+   },
+   {
+      "id": 4,
+      "title": "Hulk Incridible",
+      "genre": null,
+      "category": 2,
+      "language": "Korean",
+      "time": "90",
+      "image_cover": "afnjdfjfnj.jpg",
+      "country": 5,
+      "createdAt": "2021-07-13T06:03:59.348Z",
+      "updatedAt": "2021-07-13T06:03:59.348Z"
+   }
+]

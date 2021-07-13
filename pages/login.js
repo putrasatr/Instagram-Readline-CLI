@@ -4,6 +4,7 @@ const readline = require('readline');
 const fs = require('fs')
 const { garis, messageBubble, logo } = require("../components");
 const { home } = require("./home");
+const { getFoods } = require("../services/apps");
 const rl = readline.createInterface({
     input: process.stdin,
     output: process.stdout,
