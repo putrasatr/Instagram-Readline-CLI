@@ -1,0 +1,26 @@
+[
+   {
+      "id": 1,
+      "userId": 3,
+      "image": "beauty.jpg",
+      "likes": 33412823,
+      "createdAt": "2021-07-13T11:29:36.574Z",
+      "updatedAt": "2021-07-13T11:29:36.574Z",
+      "user": {
+         "username": "anya_geraldine",
+         "email": "anyaG@gmail.com"
+      }
+   },
+   {
+      "id": 2,
+      "userId": 2,
+      "image": "cool.jpg",
+      "likes": 210,
+      "createdAt": "2021-07-13T11:36:07.161Z",
+      "updatedAt": "2021-07-13T11:36:07.161Z",
+      "user": {
+         "username": "putrasptm",
+         "email": "putra@gmail.com"
+      }
+   }
+]

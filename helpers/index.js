@@ -1,5 +1,6 @@
-
+const fs = require("fs")
 const { home } = require("../pages/home")
+const { writeData } = require("./writeData")
 
 const handleFailure = (askEmail) => {
     console.log('Email Or Password is not correct!')
@@ -30,14 +31,7 @@ const getDate = () => {
     }).format(Date.now())
     return date
 }
-const writeData = (data, path) => {
-    fs.writeFile(__dirname + path, JSON.stringify(data, null, 3), (err, res) => {
-        if (err) return console.log(err)
-        return new Promise(resolve => {
-            resolve("Success")
-        })
-    })
-}
+
 
 const handleErrorResponseSquelize = (err) => {
     const logs = `
