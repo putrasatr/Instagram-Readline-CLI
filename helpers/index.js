@@ -23,11 +23,30 @@ const getDate = () => {
         month: 'long',
         year: 'numeric',
         weekday: 'short',
-        hour:'2-digit',
-        second:'2-digit',
-        minute:'2-digit'
+        hour: '2-digit',
+        second: '2-digit',
+        minute: '2-digit'
         // hour12: true
     }).format(Date.now())
     return date
 }
-module.exports = { handleSuccess, handleInput, handleFailure, handleString }
+const writeData = (data, path) => {
+    fs.writeFile(__dirname + path, JSON.stringify(data, null, 3), (err, res) => {
+        if (err) return console.log(err)
+        return new Promise(resolve => {
+            resolve("Success")
+        })
+    })
+}
+
+const handleErrorResponseSquelize = (err) => {
+    const logs = `
+    SORRY!, There is something wrong with server.
+    Please try again later.  😃
+
+    Error Detail : ${err.message}
+    `
+    console.log(logs)
+
+}
+module.exports = { handleSuccess, handleInput, handleFailure, handleString, writeData, handleErrorResponseSquelize }
