@@ -5,7 +5,7 @@ const rl = readline.createInterface({
     prompt: ''
 });
 const { AsyncStorage } = require("./helpers/AsyncStorage")
-const router = require('./routers/')
+const router = require('./routers')
 AsyncStorage.getItem()
     .then(token => {
         router(rl, token)
