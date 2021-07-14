@@ -1,28 +1,41 @@
 const fs = require("fs")
 const { SequelizeAPIRequest } = require("../axios")
-const { writeData, handleErrorResponseSquelize } = require('../../helpers')
-const {
-    PATH_MOVIES_DB,
-    PATH_FOODS_DB,
-    PATH_USERS_DB,
-    PATH_POSTS_DB
-} = require("../../constants")
-
+const { handleErrorResponseSquelize } = require('../../helpers/hanleError')
+const { writeData } = require('../../helpers/writeData')
+const { AsyncStorage } = require("../../helpers/AsyncStorage")
+const { PATH_PAGINATION_JSON } = require("../../constants")
 
 const load = async (path, pathJSON) => {
     try {
-        const { data: { data } } = await SequelizeAPIRequest.get(path);
-        writeData(data, pathJSON)
-        return new Promise(resolve => {
-            resolve(true)
+        const { data: { data, pagination } } = await SequelizeAPIRequest.get(path);
+        await writeData(data, pathJSON)
+        if (pagination) await writeData(pagination, PATH_PAGINATION_JSON)
+        const { data: dataRead } = getData(pathJSON)
+        return dataRead
+    } catch (error) {
+        return handleErrorResponseSquelize(error)
+    }
+}
+
+const postLogin = async (path, pathJSON, body) => {
+    try {
+        const { data: { data, message } } = await SequelizeAPIRequest.post(path, body);
+        await writeData(data, pathJSON)
+        const { data: dataRead } = getData(pathJSON)
+        return new Promise((resolve, rejects) => {
+            if (dataRead.length > 0) {
+                AsyncStorage.setItem("fajkkjds")
+                resolve(dataRead)
+            }
+            rejects(message)
+
         })
     } catch (error) {
         return handleErrorResponseSquelize(error)
     }
 }
 
-const getData = (path, db) => {
-    load(path, db)
+const getData = (db) => {
     const data = JSON.parse(fs.readFileSync(__dirname + db))
     if (data) {
         if (data.length > 0) return ({
@@ -37,16 +50,5 @@ const getData = (path, db) => {
     }
 }
 
-
-exports.getData = getData
-const { data } = getData('posts?page=1', PATH_POSTS_DB)
-data.forEach(({ image, likes, user: { username } }, i) => {
-    console.log(
-        `${i + 1}. ${username}
-
-Likes : ${likes}       
-Image : ${image}
-_____________________________________________
-            `
-    )
-})
+exports.load = load
+exports.postLogin = postLogin
