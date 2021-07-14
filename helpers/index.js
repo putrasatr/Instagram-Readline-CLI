@@ -1,16 +1,12 @@
-const fs = require("fs")
-const { home } = require("../pages/home")
-const { setItem } = require("./secureLocaleStorage")
-const { writeData } = require("./writeData")
-
 const handleFailure = (msg, askEmail, rl) => {
     console.log(msg)
     askEmail(rl)
 }
-const handleSuccess = (resolve, rl) => {
-    setItem("token", "kasfnjkfnankln3")
+const handleSuccess = (resolve, rl, callback) => {
     console.log(`Welcome! ${resolve}`)
-    home(rl)
+    setTimeout(() => {
+        callback(rl)
+    }, 500)
 }
 
 const handleInput = () => {
@@ -33,20 +29,8 @@ const getDate = () => {
     return date
 }
 
-
-const handleErrorResponseSquelize = (err) => {
-    const logs = `
-    SORRY!, There is something wrong with server.
-    Please try again later.  😃
-
-    Error Detail : ${err.message}
-    `
-    console.log(logs)
-
-}
 exports.handleSuccess = handleSuccess
 exports.handleInput = handleInput
 exports.handleFailure = handleFailure
 exports.handleString = handleString
-exports.writeData = writeData
-// module.exports = { handleSuccess, handleInput, handleFailure, handleString, writeData, handleErrorResponseSquelize }
+exports.getDate = getDate

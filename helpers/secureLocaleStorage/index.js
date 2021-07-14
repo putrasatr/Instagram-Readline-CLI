@@ -1,33 +1,36 @@
-const fs = require("fs")
-const { resolve } = require("path")
 const { PATH_LOCAL_STORAGE_DB } = require("../../constants")
 const { writeData } = require("../writeData")
-const getItem = (key) => {
-    const value = JSON.parse(fs.readFileSync(__dirname + "/../.." + PATH_LOCAL_STORAGE_DB, "utf-8"))[key]
-    return value
-}
-const setItem = async (key, value) => {
-    const path = `/../..${PATH_LOCAL_STORAGE_DB}`
-    const data = {}
-    data[key] = value
+const { readData } = require("../readData")
 
-    await writeData(data, path)
-    return true
-}
-const removeItem = async (key) => {
-    const path = `/../..${PATH_LOCAL_STORAGE_DB}`
-    const data = {}
-    data[key] = null
+class SecureLocaleStorage {
+    constructor(key) {
+        this.key = key;
+    }
 
-    await writeData(data, path)
-    return new Promise(resolve => {
-        console.log("Loading...")
-        setTimeout(() => {
-            resolve(true)
-        }, 1000)
-    })
+    getItem() {
+        const v = readData(this.key, PATH_LOCAL_STORAGE_DB)
+        return v
+    }
+
+    async setItem(value) {
+        const data = {}
+        data[this.key] = value
+        await writeData(data, this.path)
+        return true
+    }
+    async removeItem() {
+        const data = {}
+        data[this.key] = null
+        await writeData(data, PATH_LOCAL_STORAGE_DB)
+        return new Promise(resolve => {
+            console.log("Loading...")
+            setTimeout(() => {
+                resolve(true)
+            }, 1000)
+        })
+    }
 }
 
-exports.getItem = getItem
-exports.setItem = setItem
-exports.removeItem = removeItem
+
+
+exports.SecureLocaleStorage = SecureLocaleStorage
