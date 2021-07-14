@@ -1,15 +1,12 @@
-const fs = require("fs")
-const { home } = require("../pages/home")
-const { writeData } = require("./writeData")
-
-const handleFailure = (askEmail) => {
-    console.log('Email Or Password is not correct!')
-    askEmail()
+const handleFailure = (msg, askEmail, rl) => {
+    console.log(msg)
+    askEmail(rl)
 }
-const handleSuccess = (resolve, command) => {
+const handleSuccess = (resolve, rl, callback) => {
     console.log(`Welcome! ${resolve}`)
-    home()
-    command()
+    setTimeout(() => {
+        callback(rl)
+    }, 500)
 }
 
 const handleInput = () => {
@@ -32,15 +29,8 @@ const getDate = () => {
     return date
 }
 
-
-const handleErrorResponseSquelize = (err) => {
-    const logs = `
-    SORRY!, There is something wrong with server.
-    Please try again later.  😃
-
-    Error Detail : ${err.message}
-    `
-    console.log(logs)
-
-}
-module.exports = { handleSuccess, handleInput, handleFailure, handleString, writeData, handleErrorResponseSquelize }
+exports.handleSuccess = handleSuccess
+exports.handleInput = handleInput
+exports.handleFailure = handleFailure
+exports.handleString = handleString
+exports.getDate = getDate
