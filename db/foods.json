@@ -1,33 +1,42 @@
 [
    {
       "id": 1,
-      "name": "Bakso Boraks",
-      "ingridients": [
-         "Daging",
-         "Boraks",
-         "Air",
-         "Ragi"
-      ],
-      "price": 10000,
-      "origin": "19",
-      "image": "bakso-boraks.jpg",
-      "createdAt": "2021-07-13T06:35:00.981Z",
-      "updatedAt": "2021-07-13T06:35:00.981Z"
+      "email": "admin@gmail.com",
+      "password": "12345",
+      "username": "Admin",
+      "createdAt": "2021-07-12T06:15:07.247Z",
+      "updatedAt": "2021-07-12T06:15:07.247Z"
    },
    {
       "id": 2,
-      "name": "Jeon Daging Sapi",
-      "ingridients": [
-         "Telur",
-         "Daging Sapi",
-         "Daun Bawang",
-         "Terigu",
-         "Garam"
-      ],
-      "price": 10000,
-      "origin": "19",
-      "image": "bakso-boraks.jpg",
-      "createdAt": "2021-07-13T06:37:42.808Z",
-      "updatedAt": "2021-07-13T06:37:42.808Z"
+      "email": "putra@gmail.com",
+      "password": "12345",
+      "username": "putrasptm",
+      "createdAt": "2021-07-13T10:12:22.999Z",
+      "updatedAt": "2021-07-13T10:12:22.999Z"
+   },
+   {
+      "id": 3,
+      "email": "anyaG@gmail.com",
+      "password": "12345",
+      "username": "anya_geraldine",
+      "createdAt": "2021-07-13T10:12:44.781Z",
+      "updatedAt": "2021-07-13T10:12:44.781Z"
+   },
+   {
+      "id": 4,
+      "email": "chunseounoo@gmail.com",
+      "password": "12345",
+      "username": "mysong_jihyo",
+      "createdAt": "2021-07-14T03:13:06.574Z",
+      "updatedAt": "2021-07-14T03:13:06.574Z"
+   },
+   {
+      "id": 5,
+      "email": "atta@gmail.com",
+      "password": "12345",
+      "username": "atta_halililiwir",
+      "createdAt": "2021-07-14T03:13:43.273Z",
+      "updatedAt": "2021-07-14T03:13:43.273Z"
    }
 ]

@@ -1,26 +1,67 @@
 [
    {
       "id": 1,
+      "userId": 1,
+      "images": "cool.jpg",
+      "likes": 1,
+      "captions": null,
+      "createdAt": "2021-07-14T03:20:53.070Z",
+      "updatedAt": "2021-07-14T03:20:53.070Z",
+      "user": {
+         "username": "Admin",
+         "email": "admin@gmail.com"
+      }
+   },
+   {
+      "id": 2,
+      "userId": 2,
+      "images": "cooaaaa.jpg",
+      "likes": 10932,
+      "captions": "Hello World!! :)",
+      "createdAt": "2021-07-14T03:21:28.614Z",
+      "updatedAt": "2021-07-14T03:21:28.614Z",
+      "user": {
+         "username": "putrasptm",
+         "email": "putra@gmail.com"
+      }
+   },
+   {
+      "id": 3,
       "userId": 3,
-      "image": "beauty.jpg",
-      "likes": 33412823,
-      "createdAt": "2021-07-13T11:29:36.574Z",
-      "updatedAt": "2021-07-13T11:29:36.574Z",
+      "images": "beauty.jpg",
+      "likes": 109323920,
+      "captions": "Beach is bright!! :)",
+      "createdAt": "2021-07-14T03:21:56.779Z",
+      "updatedAt": "2021-07-14T03:21:56.779Z",
       "user": {
          "username": "anya_geraldine",
          "email": "anyaG@gmail.com"
       }
    },
    {
-      "id": 2,
-      "userId": 2,
-      "image": "cool.jpg",
-      "likes": 210,
-      "createdAt": "2021-07-13T11:36:07.161Z",
-      "updatedAt": "2021-07-13T11:36:07.161Z",
+      "id": 4,
+      "userId": 4,
+      "images": "beauty.jpg",
+      "likes": 109323920,
+      "captions": "Ahsiap!! :)",
+      "createdAt": "2021-07-14T03:22:07.966Z",
+      "updatedAt": "2021-07-14T03:22:07.966Z",
       "user": {
-         "username": "putrasptm",
-         "email": "putra@gmail.com"
+         "username": "mysong_jihyo",
+         "email": "chunseounoo@gmail.com"
+      }
+   },
+   {
+      "id": 5,
+      "userId": 5,
+      "images": "beauty.jpg",
+      "likes": 109323920,
+      "captions": "Yepon jihyo!! :)",
+      "createdAt": "2021-07-14T03:22:22.656Z",
+      "updatedAt": "2021-07-14T03:22:22.656Z",
+      "user": {
+         "username": "atta_halililiwir",
+         "email": "atta@gmail.com"
       }
    }
 ]
