@@ -1,6 +1,6 @@
 const { PATH_LOCAL_STORAGE_DB } = require("../../constants")
 const { writeData } = require("../writeData")
-const { readData } = require("../readData")
+const { readData } = require("../readData");
 
 class SecureLocaleStorage {
     constructor(key) {
@@ -9,15 +9,18 @@ class SecureLocaleStorage {
 
     getItem() {
         const v = readData(this.key, PATH_LOCAL_STORAGE_DB)
-        return v
+        return new Promise(resolve => {
+            resolve(v)
+        })
     }
 
     async setItem(value) {
         const data = {}
         data[this.key] = value
-        await writeData(data, this.path)
+        await writeData(data, PATH_LOCAL_STORAGE_DB)
         return true
     }
+
     async removeItem() {
         const data = {}
         data[this.key] = null

@@ -1,10 +1,10 @@
 [
    {
-      "id": 5,
-      "email": "atta@gmail.com",
+      "id": 1,
+      "email": "admin@gmail.com",
       "password": "12345",
-      "username": "atta_halililiwir",
-      "createdAt": "2021-07-14T03:13:43.273Z",
-      "updatedAt": "2021-07-14T03:13:43.273Z"
+      "username": "Admin",
+      "createdAt": "2021-07-12T06:15:07.247Z",
+      "updatedAt": "2021-07-12T06:15:07.247Z"
    }
 ]
